@@ -1,0 +1,5 @@
+rate: double
+principal: signed double
+payment: signed double
+
+

@@ -1,0 +1,26 @@
+a.)
+'a': char char
+L'a': wider char wchat_t
+"a": string Array[char]
+L"a": string Array[wchar_t]
+
+b.)
+10: int
+10u: unsigned int
+10L: long
+10uL: insigned long
+012: octal10 int
+0xC: hex12 int
+
+c.)
+3.14: double
+3.14f: float
+3.14L: long double
+
+d.)
+10: -
+10u: -
+10.: double
+10e-2: double
+
+

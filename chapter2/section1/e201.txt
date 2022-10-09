@@ -1,0 +1,3 @@
+minimum size
+wether it can be negative or not
+range

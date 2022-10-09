@@ -1,0 +1,7 @@
+pros:
+  more compact expression
+  iter. condition all in the same place
+  
+cons:
+  condition is pre-specified
+  diffcult for dynamic condition
