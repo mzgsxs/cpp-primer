@@ -1,0 +1,3 @@
+
+references are not objects, where as pointers are objects.
+references are unchangable aliases, where as pointers are mutable objects.

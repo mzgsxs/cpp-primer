@@ -1,0 +1,2 @@
+void pointer can point to any "unkown" type
+otherwise the base type must match
