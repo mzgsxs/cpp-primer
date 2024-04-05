@@ -2,8 +2,8 @@
 
 int main() 
 {
-  int i = 0, &ri = i;
-  double d = 0, &rd = d;
+  int i = 0, & ri = i;
+  double d = 0, & rd = d;
   std::cout << i << d << std::endl;
   rd = 3.14; // ok
   std::cout << i << d << std::endl;

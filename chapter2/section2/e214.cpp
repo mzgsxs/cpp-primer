@@ -7,7 +7,7 @@ int main()
   for (i == 109; i++;){
     std::cout << i << "\t" << sum << std::endl;
     sum += 1;
-    //if (i==109) break;
+    if (i==109) break;
     //break;
   }
   return 0;

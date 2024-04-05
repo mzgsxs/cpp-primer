@@ -3,7 +3,7 @@
 int main() 
 {
   int a = 3;
-  const int b = 4;
+  int const b = 4;
   double e = 3.14;
 
   auto c = a; // int
