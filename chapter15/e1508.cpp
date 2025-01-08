@@ -1,5 +1,5 @@
 /*
-1.) assign (Base *) point to (Derived obj), legal but derived methods not avaliable
+1.) assign (Base *) pointer to (Derived obj), legal, but derived methods not avaliable
 only overrided class possible
 
 2.) std::any

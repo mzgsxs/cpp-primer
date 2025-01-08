@@ -29,6 +29,7 @@ friend Query operator&(const Query&, const Query&);
 
 public:
   Query(std::string const &); // builds a new WordQuery
+  ~Query();
   //interface functions: call the corresponding Query_baseoperations
   QueryResult eval(const TextQuery & t) const
     { return q->eval(t); }
@@ -37,10 +38,10 @@ public:
     return q->rep(); 
   }
 private:
-  Query(std::shared_ptr<Query_base> query): q(query) { 
+  Query( Query_base * const query): q(query) { 
     std::cout << "query public constructor" << std::endl;
   }
-  std::shared_ptr<Query_base> q;
+   Query_base * q;
 };
 
 
@@ -59,6 +60,19 @@ q( new WordQuery(s) ) {
 }
 //q( std::make_shared<WordQuery>(s) ) {}
 // this will fail as it requires extra access to WordQuery constructor from make_shared
+
+
+
+
+inline 
+Query::~Query () {
+  //delete q;
+}
+
+
+
+
+
 
 
 std::ostream &
@@ -80,7 +94,7 @@ friend Query operator~(const Query &);
 
 inline
 Query operator~(Query const & operand){
-  return std::shared_ptr<Query_base>(new NotQuery(operand));
+  return  (new NotQuery(operand));
   //return std::make_shared<Query_base>(operand);
 }
 
@@ -108,7 +122,7 @@ friend Query operator&(const Query&, const Query&);
 
 inline
 Query operator&(const Query& lhs, const Query& rhs){
-  return std::shared_ptr<Query_base>(new AndQuery(lhs, rhs));
+  return  (new AndQuery(lhs, rhs));
 }
 
 class OrQuery: public BinaryQuery{
@@ -120,7 +134,7 @@ friend Query operator|(const Query&, const Query&);
 
 inline
 Query operator|(const Query& lhs, const Query& rhs){
-  return std::shared_ptr<Query_base>(new OrQuery(lhs, rhs));
+  return  (new OrQuery(lhs, rhs));
 }
 
 #include<algorithm>
